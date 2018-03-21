@@ -1,0 +1,112 @@
+%\documentclass[openany]{book}
+\documentclass[11pt]{article}
+\usepackage{ctex}
+\usepackage{indentfirst}
+\usepackage[toc,page]{appendix}
+%\usepackage[titletoc,title]{appendix}
+\usepackage{subfig}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n} %for fancy L
+\usepackage{epsfig, float,array,tabu,longtable,}
+%\usepackage{hyperref,wrapfig}
+\usepackage{enumerate}
+\usepackage[at]{easylist}
+\usepackage{graphicx,psfrag}
+\usepackage{cite}
+\usepackage{sectsty}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{caption}
+\newlist{inparaenum}{enumerate}{2}% allow two levels of nesting in an enumerate-like environment
+\setlist[inparaenum]{nosep}% compact spacing for all nesting levels
+\setlist[inparaenum,1]{label=\bfseries\arabic*.}% labels for top level
+\setlist[inparaenum,2]{label=\arabic{inparaenumi}\emph{\alph*})}% labels for second level
+
+\usepackage{epstopdf}
+\usepackage{amsmath,esint, setspace, fancyhdr, amsfonts,  blindtext}
+\usepackage[normalem]{ulem}
+
+\usepackage{tikz}
+\usepackage{rotating}
+\usepackage[americanvoltages,fulldiodes,siunitx]{circuitikz}
+\usepackage{stackengine}
+\usetikzlibrary{matrix}
+\usepackage{multirow}
+
+\usetikzlibrary{shapes,backgrounds,patterns}
+\usetikzlibrary{mindmap,trees,decorations.markings}
+\usetikzlibrary{quotes,angles}
+\usepackage{verbatim}
+\renewcommand{\baselinestretch}{1}
+\setlength{\textheight}{8in}
+\setlength{\textwidth}{6.5in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0.3in}
+\setlength{\topmargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parindent}{.2in}
+\usepackage{algorithmic}
+\usepackage{algorithm,float}
+\usepackage{caption}
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled 画线
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled 画线
+   \end{center}
+  }
+
+\begin{document}
+
+
+\begin{center}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\textsc{\LARGE Homework 1}  \\[0.5cm] % Name of your university/college
+\HRule \\[1cm]
+{ \huge  \textbf{神经影像与神经记录方法}}\\[0.5cm] % Title of your document
+\HRule \\[1cm]
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+\begin{center}
+\Large \emph{}\\
+\text{生51 陈旭鹏}\\
+\text{学号: 2014012882}\\ 
+\end{center}
+\begin{minipage}{0.4\textwidth}
+\begin{center}
+{\large \today}
+\end{center}
+\end{minipage}\\[2cm]
+ % Date, change the \today to a set date if you want to be precise
+\end{center}
+
+
+\section{MRI 大脑结构分析}
+\subsection{大脑占比}
+利用网站http://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation的相关注释，找到数据中每个voxel的编号所对应的脑区，可以观察到大脑皮层的脑区数据编号为1000~2000，且左脑为1000开头，右脑为2000开头。在对应时也把Cingulate考虑了进去。将四个脑区的左右脑对应的voxel分别重新赋值为1~8方便计数，可视化结果如下。
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 15cm ]{0.png}
+\caption{可视化部分层重新编号的四个脑区的图像}
+\end{figure}
+
+
+
+
+
+\end{document}
+
