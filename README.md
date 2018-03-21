@@ -1,4 +1,4 @@
-## introduction
+## Introduction
 This repository saves the codes and report in computational and systematic  neural biology taught by teachers in Department of Biomedical Engineering.
 The homework in this course is much harder than neural biology course in life science school. I found it hard not because it needs lots of coding work, but it needs many understanding and study after class. By doing this homework I have learned a lot about imaging and computational tools in neural biology.
 
